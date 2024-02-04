@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="{% url 'register_user' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label for="profile_image">Profile Image:</label>
+        <input type="file" name="profile_image"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+    {% if success_message %}
+        <script>
+            alert("{{ success_message }}");
+        </script>
+    {% endif %}
+</body>
+</html>
