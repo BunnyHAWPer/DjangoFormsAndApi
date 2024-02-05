@@ -28,19 +28,7 @@ def registerUserApi(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid Method'})
 
-# @csrf_exempt
-# def login_user(request):
-#     if request.method == 'POST':
-#         email = request.POST.get('email')
-#         password = request.POST.get('password')
-
-#         try:
-#             user = User.objects.get(email=email, password=password)
-#             return JsonResponse({'status': 'success', 'message': 'Login successful.'})
-#         except ObjectDoesNotExist:
-#             return JsonResponse({'status': 'error', 'message': 'Invalid email or password.'})
-#     else:
-#         return JsonResponse({'status': 'error', 'message': 'Invalid Method'})
+     return JsonResponse({'status': 'error', 'message': 'Invalid Method'})
     
 @csrf_exempt
 def loginUserApi(request):
